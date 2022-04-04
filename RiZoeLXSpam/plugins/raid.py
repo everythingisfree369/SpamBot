@@ -53,7 +53,7 @@ async def spam(e):
                     caption = f"{username} {reply}"
                     async with e.client.action(e.chat_id, "typing"):
                         await e.client.send_message(e.chat_id, caption)
-                        await asyncio.sleep(0.5)
+                        await asyncio.sleep(0.1)
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
@@ -76,7 +76,7 @@ async def spam(e):
                     caption = f"{username} {reply}"
                     async with e.client.action(e.chat_id, "typing"):
                         await e.client.send_message(e.chat_id, caption)
-                        await asyncio.sleep(0.3)
+                        await asyncio.sleep(0.1)
         else:
             await e.reply(usage)
 
@@ -98,7 +98,7 @@ async def _(event):
     if not queue:
         return
     async with event.client.action(event.chat_id, "typing"):
-        await asyncio.sleep(0.2)
+        await asyncio.sleep(0.1)
     async with event.client.action(event.chat_id, "typing"):
         await event.client.send_message(
             entity=event.chat_id,
